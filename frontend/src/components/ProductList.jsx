@@ -2,19 +2,26 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const API_BASE = import.meta.env.VITE_API_URL || "https://e-commerce-uxbe.onrender.com";
+
+const ProductList = ({ search }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://your-backend-on-render.com/api/products") // replace with your Render URL
-      .then(res => setProducts(res.data))
-      .catch(err => console.error(err));
+    axios
+      .get(`${API_BASE}/api/products`)
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error(err));
   }, []);
 
+  const filtered = products.filter((p) =>
+    p.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
-    <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', padding: '2rem' }}>
-      {products.map(product => (
-        <ProductCard key={product._id} product={product} />
+    <div className="product-list">
+      {filtered.map((p) => (
+        <ProductCard key={p._id} product={p} />
       ))}
     </div>
   );

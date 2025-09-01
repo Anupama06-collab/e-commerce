@@ -1,11 +1,22 @@
-import React from 'react';
-import ProductList from '../components/ProductList';
+import React, { useState } from "react";
+import ProductList from "../components/ProductList";
 
-const Shop = () => (
-  <div>
-    <h2 style={{ textAlign: 'center', margin: '2rem', color: '#e52e71' }}>Shop All Products</h2>
-    <ProductList />
-  </div>
-);
+const Shop = () => {
+  const [query, setQuery] = useState("");
+
+  return (
+    <div>
+      <h2 style={{ textAlign: "center" }}>Shop</h2>
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        style={{ display: "block", margin: "1rem auto", padding: "0.5rem" }}
+      />
+      <ProductList search={query} />
+    </div>
+  );
+};
 
 export default Shop;
