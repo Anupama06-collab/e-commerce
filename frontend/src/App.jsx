@@ -1,13 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Carousel from './components/Carousel';
-import ProductList from './components/ProductList';
-import Home from './components/Home';
-import Shop from './components/Shop';
-import About from './components/About';
-import Contact from './components/Contact';
-import Cart from './components/Cart';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
 
 function App() {
   return (

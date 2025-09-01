@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -7,9 +7,8 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCartItems(prev => {
-      // Check if product is already in cart
       const exists = prev.find(item => item._id === product._id);
-      if (exists) return prev; // Avoid duplicates
+      if (exists) return prev;
       return [...prev, { ...product, quantity: 1 }];
     });
   };
