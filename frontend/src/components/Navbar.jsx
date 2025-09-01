@@ -4,7 +4,7 @@ import "./Navbar.css";
 import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   return (
     <nav className="navbar">
@@ -14,7 +14,7 @@ const Navbar = () => {
         <li><Link to="/shop">Shop</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/cart">🛒 {cartItems.length}</Link></li>
+        <li><Link to="/cart">🛒 {cart.length}</Link></li>
       </ul>
     </nav>
   );
