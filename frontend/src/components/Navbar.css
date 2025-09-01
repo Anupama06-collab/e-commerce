@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  font-family: 'Arial', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
+}
+
+.cart {
+  background-color: #fff;
+  color: #e52e71;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
